@@ -102,6 +102,13 @@ function Cv() {
           <div className="line-left"></div>
         </div>
       </div>
+      <div className="skils">
+        <h2>Mes compétences</h2>
+        <img
+          src="https://camo.githubusercontent.com/bc394f01a76348f6121950da3912f78949a7557e8d5771f20ef52fd200636170/68747470733a2f2f736b696c6c69636f6e732e6465762f69636f6e733f693d68746d6c2c6373732c6a732c6c75612c72656163742c6669676d612c7673636f64652c6170706c652c6769746875622c74687265656a732c646973636f7264267468656d653d6461726b"
+          alt="Mes compétences"
+        />
+      </div>
     </div>
   );
 }

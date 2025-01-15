@@ -37,7 +37,7 @@ body {
 
   .card-right {
     width: 900px;
-    height: 1700px;
+    height: 2000px;
     background-color: var(--backgroud-segondary-color);
     border: solid 1px var(--border-color);
     border-radius: 25px;
