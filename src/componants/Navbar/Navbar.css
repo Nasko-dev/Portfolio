@@ -1,0 +1,37 @@
+.nav {
+  position: absolute;
+  background-color: var(--backgrund-nav);
+  width: 450px;
+  height: 60px;
+  border-radius: 0 20px 0 20px;
+  margin: 0 28.1rem;
+
+  ul {
+    padding-top: 15px;
+    padding-left: 50px;
+    display: flex;
+    align-items: end;
+    gap: 35px;
+    text-align: center;
+
+    a.active {
+      transition: 0.3s;
+      color: pink; /* Couleur de l'élément actif */
+      font-weight: bold;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+
+  button.active {
+    transition: 0.3s;
+    color: pink; /* Couleur de l'élément actif */
+    font-weight: bold;
+  }
+}
