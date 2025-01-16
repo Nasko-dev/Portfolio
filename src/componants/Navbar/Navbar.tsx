@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Navbar.css";
 
-function Navbar({ setActivePage }) {
-  const [activeIndex, setActiveIndex] = useState(0); // Le premier élément est actif par défaut
+type NavbarProps = {
+  setActivePage: (page: string) => void;
+};
+
+function Navbar({ setActivePage }: NavbarProps) {
+  const [activeIndex, setActiveIndex] = useState<number>(0); // Le premier élément est actif par défaut
 
   const navItems = [
     { name: "Accueil", page: "About" },
@@ -12,7 +16,7 @@ function Navbar({ setActivePage }) {
     { name: "Contact", page: "Contact" },
   ];
 
-  const handleClick = (index, page) => {
+  const handleClick = (index: number, page: string) => {
     setActiveIndex(index); // Met à jour l'élément actif
     setActivePage(page); // Notifie le parent pour changer la page affichée
   };

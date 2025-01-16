@@ -1,5 +1,5 @@
 import "./Acceil.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import imgProfil from "../assets/images/IMG_1647.png";
 import svg1 from "../assets/images/svg/envelope.svg";
 import svg2 from "../assets/images/svg/phone.svg";
@@ -18,14 +18,14 @@ import Blog from "./Blog/Blog.tsx";
 import Contact from "./Contact/Contact.tsx";
 
 function Acceil() {
-  const [activePage, setActivePage] = useState("About"); // Page active
-  const [visiblePage, setVisiblePage] = useState(null); // Page visible après délai
+  const [activePage, setActivePage] = useState<string>("About"); // Page active
+  const [visiblePage, setVisiblePage] = useState<string | null>(null); // Page visible après délai
 
   // Met à jour la page visible avec un délai
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisiblePage(activePage);
-    }, 0); // Délai de 5 secondes
+    }, 0); // Délai de 0 secondes
 
     return () => clearTimeout(timer); // Nettoyage du timer pour éviter des problèmes
   }, [activePage]);

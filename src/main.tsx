@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
-import App from "./App.tsx";
 import Cv from "./componants/Cv/cv.tsx";
 import Acceil from "./componants/Acceil.tsx";
 

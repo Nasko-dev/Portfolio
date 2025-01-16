@@ -1,66 +1,66 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Portfolio.css";
 import img1 from "../../assets/images/project/project-4.png";
 import svg1 from "../../assets/images/svg/eye-show-svgrepo-com.svg";
 
 function Portfolio() {
-  const [activeIndex, setActiveIndex] = useState(0); // Le premier élément est actif par défaut
-  const [activeCategory, setActiveCategory] = useState("All"); // Catégorie active par défaut
+  const [activeIndex, setActiveIndex] = useState<number>(0); // Le premier élément est actif par défaut
+  const [activeCategory, setActiveCategory] = useState<string>("All"); // Catégorie active par défaut
 
   const navItems = [
     { name: "All", category: "All" },
     { name: "Web design", category: "Web Design" },
     { name: "Applications", category: "Applications" },
-    { name: "Web development", category: "Web development" },
+    { name: "Web development", category: "Web Development" },
   ];
 
   const projects = [
     {
       category: "finance",
       name: "BuscAdis",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "finance",
       name: "Viaja Ya!",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "finance",
       name: "PublicAdis",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "finance",
       name: "DiverEdu",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "finance",
       name: "LaTatuadora",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "finance",
       name: "Cachimboz",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "finance",
       name: "SAP Adventures",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "finance",
       name: "Portafolio",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
@@ -78,13 +78,13 @@ function Portfolio() {
     {
       category: "finance",
       name: "Finance",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
       category: "orizon",
       name: "Orizon",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     { category: "fundo", name: "Fundo", type: "Web Design", image: img1 },
@@ -104,7 +104,7 @@ function Portfolio() {
     {
       category: "summary",
       name: "Summary",
-      type: "Web development",
+      type: "Web Development",
       image: img1,
     },
     {
@@ -115,7 +115,7 @@ function Portfolio() {
     },
   ];
 
-  const handleClick = (index, category) => {
+  const handleClick = (index: number, category: string) => {
     setActiveIndex(index); // Met à jour l'index actif
     setActiveCategory(category); // Met à jour la catégorie active
   };

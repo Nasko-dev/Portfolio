@@ -129,7 +129,7 @@ function About() {
       <div className="startup">
         <h2>Startup</h2>
         <p>
-          {startup.map((item, index) => (
+          {startup.map((item) => (
             <p>{item.name}</p>
           ))}
         </p>

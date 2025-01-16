@@ -1,4 +1,3 @@
-import React from "react";
 import "./Cv.css";
 import img1 from "../../assets/images/svg/education.svg";
 
