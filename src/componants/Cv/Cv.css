@@ -83,6 +83,7 @@
       box-shadow: #b450ac49 0px 0px 5px 5px;
 
       h4 {
+        width: 300px;
         margin-bottom: 10px;
         margin-left: 100px;
       }
@@ -95,6 +96,10 @@
       p {
         margin-left: 100px;
         min-width: 44rem;
+
+        a {
+          color: #6b97b3;
+        }
       }
     }
   }

@@ -9,45 +9,48 @@ function Cv() {
       <div className="Style-line">
         <div className="box1">
           <img src={img1} alt="Education" />
-          <p>Education</p>
+          <p>Expérience</p>
         </div>
         <div className="ronds">
-          <h4>Test</h4>
-          <p className="P-active">2018 — Presente</p>
+          <h4>Windows 11</h4>
+          <p className="P-active">2024 — Presente</p>
           <p>
-            A través de Platzi, he tenido la oportunidad de adquirir
-            conocimientos especializados en áreas como marketing digital,
-            desarrollo web y diseño de interfaces. Los cursos interactivos y
-            actualizados me han permitido estar al tanto de las últimas
-            tendencias y técnicas en el mundo digital, brindándome una base
-            sólida para desarrollar estrategias efectivas como ingeniero y
-            Estratega de Contenidos.
+            J’ai recréé l’interface de{" "}
+            <a href="https://nasko-dev.github.io/Portfolio/">Windows 11</a> en
+            solo pour perfectionner mes compétences en développement web et
+            design UI/UX. En utilisant React, CSS avancé et JavaScript, j’ai
+            reproduit le menu Démarrer, la barre des tâches et les fenêtres
+            dynamiques avec des animations fluides. Ce projet m’a appris à
+            optimiser les performances et à concevoir des interfaces intuitives
+            et esthétiques. Un vrai défi, mais super enrichissant ! 🚀
           </p>
         </div>
         <div className="ronds">
-          <h4>Test</h4>
-          <p className="P-active">2018 — Presente</p>
+          <h4>WildCity</h4>
+          <p className="P-active">2024 — Présent</p>
           <p>
-            A través de Platzi, he tenido la oportunidad de adquirir
-            conocimientos especializados en áreas como marketing digital,
-            desarrollo web y diseño de interfaces. Los cursos interactivos y
-            actualizados me han permitido estar al tanto de las últimas
-            tendencias y técnicas en el mundo digital, brindándome una base
-            sólida para desarrollar estrategias efectivas como ingeniero y
-            Estratega de Contenidos.
+            J’ai participé à un projet en équipe où nous avons créé{" "}
+            <a href="https://nasko-dev.github.io/Portfolio/">WildCity</a>, une
+            ville fictive remplie de poulets. Développé avec React, CSS avancé
+            et JavaScript, ce site propose une immersion originale avec une
+            interface interactive et des animations fluides. Cette expérience
+            m’a permis d’améliorer mes compétences en travail d’équipe, gestion
+            des composants dynamiques. Un projet fun et formateur ! 🐔🚀
           </p>
         </div>
         <div className="ronds">
-          <h4>Test</h4>
-          <p className="P-active">2018 — Presente</p>
+          <h4>Portfolio</h4>
+          <p className="P-active">2024 — Présent</p>
           <p>
-            A través de Platzi, he tenido la oportunidad de adquirir
-            conocimientos especializados en áreas como marketing digital,
-            desarrollo web y diseño de interfaces. Los cursos interactivos y
-            actualizados me han permitido estar al tanto de las últimas
-            tendencias y técnicas en el mundo digital, brindándome una base
-            sólida para desarrollar estrategias efectivas como ingeniero y
-            Estratega de Contenidos.
+            J’ai conçu mon{" "}
+            <a href="https://nasko-dev.github.io/Portfolio/">Portfolio</a> de A
+            à Z pour mettre en avant mes projets et compétences en développement
+            web. En utilisant React, CSS avancé et JavaScript, j’ai créé une
+            interface moderne, responsive et fluide, avec des animations et une
+            navigation intuitive. Ce projet m’a permis d’affiner mon approche
+            UX/UI, d’optimiser les performances et de renforcer ma maîtrise du
+            front-end. Un travail clé pour illustrer mon évolution et mes
+            capacités techniques ! 🚀
           </p>
         </div>
         <div className="line-left"></div>
@@ -60,44 +63,43 @@ function Cv() {
             <p>Education</p>
           </div>
           <div className="ronds">
-            <h4>Test</h4>
-            <p className="P-active">2018 — Presente</p>
+            <h4>Développeur Web Full Stack</h4>
+            <p className="P-active">2024-2025</p>
             <p>
-              A través de Platzi, he tenido la oportunidad de adquirir
-              conocimientos especializados en áreas como marketing digital,
-              desarrollo web y diseño de interfaces. Los cursos interactivos y
-              actualizados me han permitido estar al tanto de las últimas
-              tendencias y técnicas en el mundo digital, brindándome una base
-              sólida para desarrollar estrategias efectivas como ingeniero y
-              Estratega de Contenidos.
+              J’ai suivi une formation intensive à la{" "}
+              <strong>Wild Code School</strong> en développement web full stack,
+              où j’ai appris à maîtriser "JavaScript, React, Node.js, Express et
+              SQL" à travers des projets concrets. Cette expérience m’a permis
+              de renforcer mes compétences techniques, de travailler en équipe
+              agile et d’obtenir un diplôme certifiant Bac+2. 🚀
             </p>
           </div>
           <div className="ronds">
-            <h4>Test</h4>
-            <p className="P-active">2018 — Presente</p>
+            <h4>Technicien Assistance Informatique</h4>
+            <p className="P-active">2023-2024</p>
             <p>
-              A través de Platzi, he tenido la oportunidad de adquirir
-              conocimientos especializados en áreas como marketing digital,
-              desarrollo web y diseño de interfaces. Los cursos interactivos y
-              actualizados me han permitido estar al tanto de las últimas
-              tendencias y técnicas en el mundo digital, brindándome una base
-              sólida para desarrollar estrategias efectivas como ingeniero y
-              Estratega de Contenidos.
+              Formé à la "gestion et maintenance de serveurs" sous "Windows et
+              Linux", j’assure l’administration des systèmes, la configuration
+              réseau et la "sécurisation des infrastructures IT". Cette
+              expérience m’a aussi permis de renforcer mes compétences en
+              "support et dépannage". 🖥️🔧
             </p>
           </div>
           <div className="ronds">
-            <h4>Test</h4>
-            <p className="P-active">2018 — Presente</p>
+            <h4>Expérience dans le secteur agricole</h4>
+            <p className="P-active">-2023</p>
             <p>
-              A través de Platzi, he tenido la oportunidad de adquirir
-              conocimientos especializados en áreas como marketing digital,
-              desarrollo web y diseño de interfaces. Los cursos interactivos y
-              actualizados me han permitido estar al tanto de las últimas
-              tendencias y técnicas en el mundo digital, brindándome una base
-              sólida para desarrollar estrategias efectivas como ingeniero y
-              Estratega de Contenidos.
+              Mon expérience dans le "monde agricole" m’a permis de développer
+              des compétences en "rigueur, gestion et adaptation", des qualités
+              essentielles en développement web. Travailler sur le terrain m’a
+              appris à résoudre des problèmes concrets, optimiser les ressources
+              et m’adapter aux imprévus. Aujourd’hui, j’applique ces mêmes
+              compétences dans la "conception de solutions numériques
+              performantes", en alliant "précision et efficacité" dans mon code.
+              🌱💻
             </p>
           </div>
+
           <div className="line-left"></div>
         </div>
       </div>
