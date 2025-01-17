@@ -5,24 +5,21 @@ import "./index.css";
 import Cv from "./componants/Cv/cv.tsx";
 import Acceil from "./componants/Acceil.tsx";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Acceil />,
-    },
-    {
-      path: "/Cv",
-      element: <Cv />,
-    },
-  ],
+const BASENAME = "/Portfolio"; // Nom du repo sur GitHub Pages
+
+const router = createBrowserRouter([
   {
-    basename: "/Portfolio", // Ajoute le basename pour GitHub Pages
-  }
-);
+    path: `${BASENAME}/`, // Ajoute le basename manuellement
+    element: <Acceil />,
+  },
+  {
+    path: `${BASENAME}/Cv`, // Préfixe aussi ici
+    element: <Cv />,
+  },
+]);
 
 const rootElement = document.getElementById("root");
-if (rootElement == null) {
+if (!rootElement) {
   throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
 }
 
