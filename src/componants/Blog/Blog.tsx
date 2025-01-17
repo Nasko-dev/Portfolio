@@ -1,9 +1,12 @@
 import "./Blog.css";
+import gif1 from "../../assets/images/load-7671_128.gif";
 
 function Blog() {
   return (
     <div className="Blog-container">
-      <p>Salut Marine, t'es belle.</p>
+      <p>
+        <img src={gif1} alt="" />
+      </p>
     </div>
   );
 }
