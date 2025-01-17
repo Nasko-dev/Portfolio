@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Portfolio.css";
 import img1 from "../../assets/images/project/project-4.png";
+import img2 from "../../assets/images/project/Windows_11_blur.webp";
+import img3 from "../../assets/images/project/Portfolio.png";
 import svg1 from "../../assets/images/svg/eye-show-svgrepo-com.svg";
 
 function Portfolio() {
@@ -17,15 +19,15 @@ function Portfolio() {
   const projects = [
     {
       category: "finance",
-      name: "BuscAdis",
-      type: "Web Development",
-      image: img1,
+      name: "Windows 11",
+      type: "Web Design",
+      image: img2,
     },
     {
       category: "finance",
-      name: "Viaja Ya!",
+      name: "Portfolio",
       type: "Web Development",
-      image: img1,
+      image: img3,
     },
     {
       category: "finance",
