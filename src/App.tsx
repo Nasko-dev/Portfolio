@@ -20,9 +20,12 @@ const useGoogleAnalytics = () => {
 
   useEffect(() => {
     if (typeof window.gtag !== "undefined") {
+      console.log(`[Google Analytics] Suivi de la page : ${location.pathname}`);
       window.gtag("config", "G-SW486PCZ8X", {
         page_path: location.pathname,
       });
+    } else {
+      console.warn("[Google Analytics] gtag non encore chargé !");
     }
   }, [location]);
 };
@@ -43,8 +46,16 @@ function App() {
 // 🔹 Composant qui injecte le script Google Analytics une seule fois
 const GoogleAnalyticsTracker = () => {
   useEffect(() => {
+    if (document.getElementById("google-analytics")) {
+      console.log("[Google Analytics] Script déjà chargé.");
+      return;
+    }
+
+    console.log("[Google Analytics] Ajout du script...");
+
     // Ajout du script Google Analytics
     const script1 = document.createElement("script");
+    script1.id = "google-analytics";
     script1.async = true;
     script1.src = "https://www.googletagmanager.com/gtag/js?id=G-SW486PCZ8X";
     document.head.appendChild(script1);
@@ -57,6 +68,8 @@ const GoogleAnalyticsTracker = () => {
       gtag('config', 'G-SW486PCZ8X');
     `;
     document.head.appendChild(script2);
+
+    console.log("[Google Analytics] Script ajouté.");
   }, []);
 
   useGoogleAnalytics(); // Active le suivi des pages
