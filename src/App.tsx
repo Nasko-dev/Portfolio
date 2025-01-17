@@ -7,12 +7,19 @@ import {
 import { useEffect } from "react";
 import Cv from "./componants/Cv/cv";
 
-// Fonction pour envoyer les données de suivi à Google Analytics
+// 🔹 Déclaration globale de `window.gtag` pour éviter les erreurs TypeScript
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+// 🔹 Hook pour suivre les changements de page et envoyer les données à Google Analytics
 const useGoogleAnalytics = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (window.gtag) {
+    if (typeof window.gtag !== "undefined") {
       window.gtag("config", "G-SW486PCZ8X", {
         page_path: location.pathname,
       });
@@ -20,18 +27,20 @@ const useGoogleAnalytics = () => {
   }, [location]);
 };
 
+// 🔹 Composant principal `App`
 function App() {
   return (
     <Router>
-      <GoogleAnalyticsTracker /> {/* Suivi des pages */}
+      <GoogleAnalyticsTracker /> {/* Active le suivi Google Analytics */}
       <Routes>
         <Route path="/cv" element={<Cv />} />
+        {/* Ajoute d'autres routes ici si besoin */}
       </Routes>
     </Router>
   );
 }
 
-// Composant qui charge Google Analytics une seule fois
+// 🔹 Composant qui injecte le script Google Analytics une seule fois
 const GoogleAnalyticsTracker = () => {
   useEffect(() => {
     // Ajout du script Google Analytics
