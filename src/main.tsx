@@ -5,20 +5,21 @@ import "./index.css";
 import Cv from "./componants/Cv/cv.tsx";
 import Acceil from "./componants/Acceil.tsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Acceil />,
+    },
+    {
+      path: "/Cv",
+      element: <Cv />,
+    },
+  ],
   {
-    children: [
-      {
-        path: "/",
-        element: <Acceil />,
-      },
-      {
-        path: "/Cv",
-        element: <Cv />,
-      },
-    ],
-  },
-]);
+    basename: "/Portfolio", // Ajoute le basename pour GitHub Pages
+  }
+);
 
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
