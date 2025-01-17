@@ -13,16 +13,16 @@ const BASENAME = "/Portfolio"; // Nom du repo sur GitHub Pages
 
 const router = createBrowserRouter([
   {
-    path: `${BASENAME}/`, // Ajoute le basename manuellement
+    path: `${BASENAME}/`,
     element: <Acceil />,
   },
   {
-    path: `${BASENAME}/Cv`, // Préfixe aussi ici
+    path: `${BASENAME}/Cv`,
     element: <Cv />,
   },
 ]);
 
-// 🔹 Déclaration globale de `window.gtag` pour éviter les erreurs TypeScript
+// 🔹 Déclaration de `window.gtag` pour éviter les erreurs TypeScript
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
