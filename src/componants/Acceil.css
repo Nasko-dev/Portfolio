@@ -195,6 +195,15 @@ body {
     flex-direction: column;
     align-items: center;
 
+    .card-right {
+      width: 90%;
+      height: 3000px;
+      background-color: var(--backgroud-segondary-color);
+      border: solid 1px var(--border-color);
+      border-radius: 25px;
+      box-shadow: rgba(0, 2, 31, 0.733) 0px 24px 80px 0px;
+    }
+
     .card-left {
       order: -1;
       width: 90%;

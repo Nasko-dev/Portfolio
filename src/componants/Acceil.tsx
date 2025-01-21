@@ -21,6 +21,17 @@ function Acceil() {
   const [activePage, setActivePage] = useState<string>("About"); // Page active
   const [visiblePage, setVisiblePage] = useState<string | null>(null); // Page visible après délai
   const [isExpanded, setIsExpanded] = useState<boolean>(false); // Gestion du toggle mobile
+  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768); // Détection mobile
+
+  // Met à jour `isMobile` en fonction de la largeur de l'écran
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Met à jour la page visible avec un délai
   useEffect(() => {
@@ -52,12 +63,14 @@ function Acceil() {
   return (
     <div className="container">
       <div className={`card-left ${isExpanded ? "expanded" : ""}`}>
-        <button
-          className="btn-expand"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {isExpanded ? "↑ Réduire" : "↓ Agrandir"}
-        </button>
+        {isMobile && ( // Afficher le bouton seulement en format mobile
+          <button
+            className="btn-expand"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "↑ Réduire" : "↓ Agrandir"}
+          </button>
+        )}
 
         <div className="header-left">
           <img
@@ -69,7 +82,8 @@ function Acceil() {
           <p>Développeur Web Full Stack</p>
           <div className="left-line"></div>
 
-          {isExpanded && (
+          {/* Cacher seulement en format mobile */}
+          {(!isMobile || isExpanded) && (
             <>
               <div className="social-icons">
                 {[
