@@ -68,7 +68,7 @@
     .hamburger-menu {
       display: block; /* Maintenant visible */
       position: absolute;
-      left: -40rem;
+      left: -36rem;
       top: 15px;
       z-index: 2000;
       font-size: 28px;
@@ -78,13 +78,15 @@
       flex-direction: column;
       position: absolute;
       top: 60px;
-      left: 15rem;
-      width: 100%;
-      background: #1a1a1a94;
+      left: -14rem;
+      width: 30%;
+      background: #1a1a1a33;
+      backdrop-filter: blur(5px);
       text-align: center;
       transition: transform 0.3s ease-in-out;
       display: none; /* Caché par défaut */
       border-radius: 15px;
+      border: solid 1px var(--border-color);
 
       &.open {
         display: flex; /* S'affiche quand le menu est ouvert */
@@ -93,15 +95,10 @@
       &.closed {
         display: none;
       }
-
-      li {
-        margin: 10px 0;
-      }
     }
 
     .nav-button {
       font-size: 18px;
-      padding: 10px;
     }
   }
 }
