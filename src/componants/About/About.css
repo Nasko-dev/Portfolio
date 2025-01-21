@@ -126,3 +126,18 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .header {
+    .line {
+      width: 1.5rem;
+      height: 4px;
+    }
+
+    .card,
+    .avis-card,
+    .startup {
+      flex-direction: column;
+    }
+  }
+}

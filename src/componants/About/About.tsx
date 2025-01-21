@@ -12,35 +12,36 @@ function About() {
   const categories = [
     {
       icon: svg1,
-      name: "Pro-Dev",
-      description: "🎯 Perfectionnement professionnel",
+      name: "Code Mastery",
+      description: "🎯 Développement web et perfectionnement technique",
     },
     {
       icon: svg2,
-      name: "Grow-Hack",
-      description: "📈 Croissance personnelle",
+      name: "Growth Lab",
+      description: "📈 Stratégies pour booster sa productivité et son mindset",
     },
     {
       icon: svg3,
-      name: "Science-Technologie",
-      description: "🔬 Sciences et technologie",
+      name: "Tech Explorer",
+      description: "🔬 Innovations, IA et tendances technologiques",
     },
     {
       icon: svg4,
-      name: "Bien ajusté",
-      description: "💪 Nutrition et entraînement",
+      name: "FitLife",
+      description: "💪 Santé, bien-être et optimisation physique",
     },
     {
       icon: svg4,
-      name: "L’état d’esprit de la startup",
-      description: "🎙️ Podcast sur l’écosystème des startups",
+      name: "Startup Pulse",
+      description: "🎙️ Interviews et insights sur le monde des startups",
     },
     {
       icon: svg4,
-      name: "Phsyco-Sophia",
-      description: "🧠 Sagesse de l’esprit → état d’esprit et sagesse",
+      name: "NeuroVibes",
+      description: "🧠 Neurosciences, intelligence émotionnelle et mindset",
     },
   ];
+
   const avis = [
     {
       image: img1,

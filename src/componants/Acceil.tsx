@@ -20,14 +20,15 @@ import Contact from "./Contact/Contact.tsx";
 function Acceil() {
   const [activePage, setActivePage] = useState<string>("About"); // Page active
   const [visiblePage, setVisiblePage] = useState<string | null>(null); // Page visible après délai
+  const [isExpanded, setIsExpanded] = useState<boolean>(false); // Gestion du toggle mobile
 
   // Met à jour la page visible avec un délai
   useEffect(() => {
     const timer = setTimeout(() => {
       setVisiblePage(activePage);
-    }, 0); // Délai de 0 secondes
+    }, 0);
 
-    return () => clearTimeout(timer); // Nettoyage du timer pour éviter des problèmes
+    return () => clearTimeout(timer);
   }, [activePage]);
 
   // Fonction pour afficher la page correspondante
@@ -50,7 +51,14 @@ function Acceil() {
 
   return (
     <div className="container">
-      <div className="card-left">
+      <div className={`card-left ${isExpanded ? "expanded" : ""}`}>
+        <button
+          className="btn-expand"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? "↑ Réduire" : "↓ Agrandir"}
+        </button>
+
         <div className="header-left">
           <img
             src={imgProfil}
@@ -60,87 +68,70 @@ function Acceil() {
           <h3>William Le Gall</h3>
           <p>Développeur Web Full Stack</p>
           <div className="left-line"></div>
+
           <div className="social-icons">
-            <div className="mail">
-              <div className="back-icon">
-                <img src={svg1} alt="Icône Mail" />
+            {[
+              {
+                icon: svg1,
+                title: "Gmail",
+                link: "mailto:williamlegall5@gmail.com",
+                text: "williamlegall5@gmail.com",
+              },
+              {
+                icon: svg2,
+                title: "Téléphone",
+                link: "tel:0600000000",
+                text: "06.00.00.00.00",
+              },
+              { icon: svg3, title: "Anniversaire", text: "05 septembre 2005" },
+              {
+                icon: svg4,
+                title: "Emplacement",
+                link: "https://www.google.com/maps?q=Quimper,+Bretagne,+France",
+                text: "🇫🇷 France, Bretagne Quimper",
+              },
+            ].map(({ icon, title, link, text }, index) => (
+              <div key={index} className="info-block">
+                <div className="back-icon">
+                  <img src={icon} alt={`Icône ${title}`} />
+                </div>
+                <div className="back-texte">
+                  <h4>{title}</h4>
+                  {link ? (
+                    <p>
+                      <a href={link} target="_blank" rel="noopener noreferrer">
+                        {text}
+                      </a>
+                    </p>
+                  ) : (
+                    <p>{text}</p>
+                  )}
+                </div>
               </div>
-              <div className="back-texte">
-                <h4>Gmail</h4>
-                <p>
-                  <a href="mailto:williamlegall5@gmail.com">
-                    williamlegall5@gmail.com
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div className="phone">
-              <div className="back-icon">
-                <img src={svg2} alt="Icône Phone" />
-              </div>
-              <div className="back-texte">
-                <h4>Téléphone</h4>
-                <p>
-                  <a href="tel:0600000000">06.00.00.00.00</a>
-                </p>
-              </div>
-            </div>
-            <div className="Anniversaire">
-              <div className="back-icon">
-                <img src={svg3} alt="Icône Calendrier" />
-              </div>
-              <div className="back-texte">
-                <h4>Anniversaire</h4>
-                <p>05 septembre 2005</p>
-              </div>
-            </div>
-            <div className="Geo">
-              <div className="back-icon">
-                <img src={svg4} alt="Icône Geo" />
-              </div>
-              <div className="back-texte">
-                <h4>Emplacement</h4>
-                <p>
-                  <a
-                    href="https://www.google.com/maps?q=Quimper,+Bretagne,+France"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    🇫🇷 France, Bretagne Quimper
-                  </a>
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
+
           <div className="left-line"></div>
           <div className="icon-social">
-            <a href="#">
-              <img src={svg5} alt="Icon-Linkedin" />
-            </a>
-            <a href="#">
-              <img src={svg6} alt="Icon-Twiter" />
-            </a>
-            <a href="#">
-              <img src={svg7} alt="Icon-Discord" />
-            </a>
-            <a href="#">
-              <img src={svg8} alt="Icon-Githeub" />
-            </a>
+            {[svg5, svg6, svg7, svg8].map((icon, index) => (
+              <a key={index} href="#">
+                <img src={icon} alt="Icône Réseau Social" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
+
       <div className="card-right">
-        {/* Navbar avec gestion de changement de page */}
         <Navbar setActivePage={setActivePage} />
         <div className="content">
           {visiblePage ? (
             renderPage()
           ) : (
             <p className="progress-9">
-              <img src={gif1} alt="" />
+              <img src={gif1} alt="Chargement..." />
             </p>
-          )}{" "}
-          {/* Page ou message */}
+          )}
         </div>
       </div>
     </div>

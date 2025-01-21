@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Portfolio.css";
-import img1 from "../../assets/images/project/project-4.png";
+// import img1 from "../../assets/images/project/project-4.png";
 import img2 from "../../assets/images/project/Windows_11_blur.webp";
 import img3 from "../../assets/images/project/Portfolio.png";
 import svg1 from "../../assets/images/svg/eye-show-svgrepo-com.svg";
