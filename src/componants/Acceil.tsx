@@ -69,56 +69,68 @@ function Acceil() {
           <p>Développeur Web Full Stack</p>
           <div className="left-line"></div>
 
-          <div className="social-icons">
-            {[
-              {
-                icon: svg1,
-                title: "Gmail",
-                link: "mailto:williamlegall5@gmail.com",
-                text: "williamlegall5@gmail.com",
-              },
-              {
-                icon: svg2,
-                title: "Téléphone",
-                link: "tel:0600000000",
-                text: "06.00.00.00.00",
-              },
-              { icon: svg3, title: "Anniversaire", text: "05 septembre 2005" },
-              {
-                icon: svg4,
-                title: "Emplacement",
-                link: "https://www.google.com/maps?q=Quimper,+Bretagne,+France",
-                text: "🇫🇷 France, Bretagne Quimper",
-              },
-            ].map(({ icon, title, link, text }, index) => (
-              <div key={index} className="info-block">
-                <div className="back-icon">
-                  <img src={icon} alt={`Icône ${title}`} />
-                </div>
-                <div className="back-texte">
-                  <h4>{title}</h4>
-                  {link ? (
-                    <p>
-                      <a href={link} target="_blank" rel="noopener noreferrer">
-                        {text}
-                      </a>
-                    </p>
-                  ) : (
-                    <p>{text}</p>
-                  )}
-                </div>
+          {isExpanded && (
+            <>
+              <div className="social-icons">
+                {[
+                  {
+                    icon: svg1,
+                    title: "Gmail",
+                    link: "mailto:williamlegall5@gmail.com",
+                    text: "williamlegall5@gmail.com",
+                  },
+                  {
+                    icon: svg2,
+                    title: "Téléphone",
+                    link: "tel:0600000000",
+                    text: "06.00.00.00.00",
+                  },
+                  {
+                    icon: svg3,
+                    title: "Anniversaire",
+                    text: "05 septembre 2005",
+                  },
+                  {
+                    icon: svg4,
+                    title: "Emplacement",
+                    link: "https://www.google.com/maps?q=Quimper,+Bretagne,+France",
+                    text: "🇫🇷 France, Bretagne Quimper",
+                  },
+                ].map(({ icon, title, link, text }, index) => (
+                  <div key={index} className="info-block">
+                    <div className="back-icon">
+                      <img src={icon} alt={`Icône ${title}`} />
+                    </div>
+                    <div className="back-texte">
+                      <h4>{title}</h4>
+                      {link ? (
+                        <p>
+                          <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {text}
+                          </a>
+                        </p>
+                      ) : (
+                        <p>{text}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <div className="left-line"></div>
-          <div className="icon-social">
-            {[svg5, svg6, svg7, svg8].map((icon, index) => (
-              <a key={index} href="#">
-                <img src={icon} alt="Icône Réseau Social" />
-              </a>
-            ))}
-          </div>
+              <div className="left-line"></div>
+              <div className="icon-social">
+                {[svg5, svg6, svg7, svg8].map((icon, index) => (
+                  <a key={index} href="#">
+                    <img src={icon} alt="Icône Réseau Social" />
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
 

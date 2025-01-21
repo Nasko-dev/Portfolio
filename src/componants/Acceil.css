@@ -113,6 +113,14 @@ body {
             object-fit: contain;
             display: block;
           }
+
+          .social-icons,
+          .icon-social {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+          }
         }
 
         .mail,
