@@ -17,6 +17,19 @@
     font-size: 0.8rem;
   }
 
+  .btn-show-more,
+  .btn-show-less {
+    margin: 15px 50px;
+    padding: 10px 15px;
+    background-color: #ffffff00;
+    color: white;
+    border: solid 1px #ff9bf788;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+  }
+
   .contenue {
     margin: 30px;
   }
@@ -49,95 +62,147 @@
       }
     }
   }
+}
 
-  .avis-contenue {
-    margin: 30px;
+.avis-contenue {
+  margin: 30px;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--segondary-color) #af191900;
+}
+
+.avis-card {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px 25px;
+  margin-top: 90px;
+  margin-bottom: 50px;
+  overflow-wrap: break-word;
+
+  .card-item-avis {
+    border: var(--border-color) solid 1px;
+    background-color: var(--backgrund-card);
+    width: 25rem;
+    height: 10rem;
+    border-radius: 10px;
     display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: var(--segondary-color) #af191900;
-  }
 
-  .avis-card {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px 25px;
-    margin-top: 90px;
-    margin-bottom: 50px;
-    overflow-wrap: break-word;
-
-    .card-item-avis {
-      border: var(--border-color) solid 1px;
-      background-color: var(--backgrund-card);
-      width: 25rem;
-      height: 10rem;
-      border-radius: 10px;
-      display: flex;
-
-      img {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        bottom: 50px;
-        left: 20px;
-        background: linear-gradient(rgb(9, 11, 26), rgb(3, 32, 70));
-        backdrop-filter: blur(5px);
-        border-radius: 20px;
-        border: solid 1px var(--border-color);
-      }
-
-      h3 {
-        margin: 15px 30px;
-      }
-
-      p {
-        font-size: 1rem;
-        margin: 30px -80px;
-        max-width: 22rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+    img {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      bottom: 50px;
+      left: 20px;
+      background: linear-gradient(rgb(9, 11, 26), rgb(3, 32, 70));
+      backdrop-filter: blur(5px);
+      border-radius: 20px;
+      border: solid 1px var(--border-color);
     }
-  }
 
-  .startup {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 30px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: var(--segondary-color) #af191900;
-
-    h2 {
-      color: var(--text-color);
+    h3 {
+      margin: 15px 30px;
     }
 
     p {
-      display: flex;
-      gap: 7rem;
-      margin-top: 20px;
-      font-size: 2rem;
-      margin-bottom: 25px;
+      font-size: 1rem;
+      margin: 30px -80px;
+      max-width: 22rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
 
-@media (max-width: 768px) {
-  .header {
-    .line {
-      width: 1.5rem;
-      height: 4px;
-    }
+.startup {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--segondary-color) #af191900;
 
-    .card,
-    .avis-card,
-    .startup {
+  h2 {
+    color: var(--text-color);
+  }
+
+  p {
+    display: flex;
+    gap: 7rem;
+    margin-top: 20px;
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .line {
+    height: 4px;
+  }
+  .contenue {
+    .card {
       flex-direction: column;
+      align-items: center;
+
+      .card-item {
+        width: 90%;
+        max-width: 22rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+
+        img {
+          width: 50px;
+          margin: 10px auto;
+        }
+
+        .texte {
+          margin: 10px 0;
+        }
+      }
     }
+  }
+
+  .avis-contenue {
+    .avis-card {
+      flex-direction: column;
+      align-items: center;
+
+      .card-item-avis {
+        width: 90%;
+        max-width: 22rem;
+        text-align: center;
+
+        img {
+          width: 70px;
+          height: 70px;
+        }
+
+        p {
+          font-size: 0.9rem;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+
+  /* ✅ Affichage du bouton "Voir plus" en mobile seulement */
+  .btn-show-more {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .btn-show-more {
+    display: none;
   }
 }

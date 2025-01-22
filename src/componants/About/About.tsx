@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./About.css";
 import svg1 from "../../assets/images/svg/icon-design.svg";
 import svg2 from "../../assets/images/svg/icon-dev.svg";
@@ -9,6 +10,19 @@ import img3 from "../../assets/images/avatar-3.png";
 import img4 from "../../assets/images/avatar-4.png";
 
 function About() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // Met à jour `isMobile` si la taille de l'écran change
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const categories = [
     {
       icon: svg1,
@@ -70,24 +84,12 @@ function About() {
   ];
 
   const startup = [
-    {
-      name: "Soon ...",
-    },
-    {
-      name: "Soon ...",
-    },
-    {
-      name: "Soon ...",
-    },
-    {
-      name: "Soon ...",
-    },
-    {
-      name: "Soon ...",
-    },
-    {
-      name: "Soon ...",
-    },
+    { name: "Soon ..." },
+    { name: "Soon ..." },
+    { name: "Soon ..." },
+    { name: "Soon ..." },
+    { name: "Soon ..." },
+    { name: "Soon ..." },
   ];
 
   return (
@@ -95,22 +97,48 @@ function About() {
       <h1>Salut je suis William</h1>
       <div className="line"></div>
       <p className="Skills">
-        Developeur web full stack / Game Developeur / Designer UI UX{" "}
+        Développeur web full stack / Game Développeur / Designer UI UX
       </p>
+
+      {/* 📌 Section des projets personnels */}
       <div className="contenue">
         <h2>Projets personnels :</h2>
         <div className="card">
-          {categories.map((item, index) => (
-            <div key={index} className="card-item">
-              <img src={item.icon} alt={item.name} />
-              <div className="texte">
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
+          {categories
+            .slice(0, showAllProjects || !isMobile ? categories.length : 3)
+            .map((item, index) => (
+              <div key={index} className="card-item">
+                <img src={item.icon} alt={item.name} />
+                <div className="texte">
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
+
+        {/* ✅ Bouton "Voir plus" affiché uniquement en mobile */}
+        {isMobile && !showAllProjects && (
+          <button
+            className="btn-show-more"
+            onClick={() => setShowAllProjects(true)}
+          >
+            Voir plus ↓
+          </button>
+        )}
+
+        {/* ✅ Bouton "Voir moins" qui apparaît après avoir affiché tous les projets */}
+        {isMobile && showAllProjects && (
+          <button
+            className="btn-show-less"
+            onClick={() => setShowAllProjects(false)}
+          >
+            Voir moins ↑
+          </button>
+        )}
       </div>
+
+      {/* 📌 Section des avis clients */}
       <div className="avis-contenue">
         <div className="avis">
           <h2>Mes Avis</h2>
@@ -127,11 +155,13 @@ function About() {
           </div>
         </div>
       </div>
+
+      {/* 📌 Section des startups */}
       <div className="startup">
         <h2>Startup</h2>
         <p>
-          {startup.map((item) => (
-            <p>{item.name}</p>
+          {startup.map((item, index) => (
+            <span key={index}>{item.name} </span>
           ))}
         </p>
       </div>
