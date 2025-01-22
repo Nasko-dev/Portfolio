@@ -19,7 +19,8 @@
 
   .btn-show-more,
   .btn-show-less {
-    margin: 15px 50px;
+    margin: 15px 110px;
+    width: 120px;
     padding: 10px 15px;
     background-color: #ffffff00;
     color: white;
