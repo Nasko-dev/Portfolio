@@ -179,7 +179,8 @@
       align-items: center;
 
       .card-item-avis {
-        width: 320px;
+        margin: 0 auto;
+        width: 17rem;
         max-width: 22rem;
         text-align: center;
 
