@@ -9,7 +9,6 @@ import svg5 from "../assets/images/svg/linkedin.svg";
 import svg6 from "../assets/images/svg/twiter.svg";
 import svg7 from "../assets/images/svg/discord.svg";
 import svg8 from "../assets/images/svg/githeub.svg";
-import gif1 from "../assets/images/load-7671_128.gif";
 import Navbar from "./Navbar/Navbar.tsx";
 import About from "./About/About.tsx";
 import Cv from "./Cv/cv.tsx";
