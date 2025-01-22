@@ -22,14 +22,19 @@ function Acceil() {
   const [visiblePage, setVisiblePage] = useState<string | null>(null); // Page visible après délai
   const [isExpanded, setIsExpanded] = useState<boolean>(false); // Gestion du toggle mobile
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768); // Détection mobile
+  const [isReady, setIsReady] = useState<boolean>(false); // ✅ Ajout d'un état pour gérer le rendu proprement
 
-  // Met à jour `isMobile` en fonction de la largeur de l'écran
+  // ✅ Met à jour `isMobile` et force un re-render après le premier chargement
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);
+
+    // ✅ Marque le composant comme prêt après le premier rendu
+    setTimeout(() => setIsReady(true), 100);
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -63,7 +68,8 @@ function Acceil() {
   return (
     <div className="container">
       <div className={`card-left ${isExpanded ? "expanded" : ""}`}>
-        {isMobile && ( // Afficher le bouton seulement en format mobile
+        {/* ✅ Afficher uniquement quand le composant est prêt */}
+        {isReady && isMobile && (
           <button
             className="btn-expand"
             onClick={() => setIsExpanded(!isExpanded)}
@@ -82,8 +88,8 @@ function Acceil() {
           <p>Développeur Web Full Stack</p>
           <div className="left-line"></div>
 
-          {/* Cacher seulement en format mobile */}
-          {(!isMobile || isExpanded) && (
+          {/* ✅ Cacher seulement en format mobile, et afficher uniquement si `isReady` */}
+          {isReady && (!isMobile || isExpanded) && (
             <>
               <div className="social-icons">
                 {[
