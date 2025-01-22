@@ -13,7 +13,7 @@ function About() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  // Met à jour `isMobile` si la taille de l'écran change
+  // ✅ Mise à jour immédiate de `isMobile` en cas de redimensionnement
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -117,24 +117,25 @@ function About() {
             ))}
         </div>
 
-        {/* ✅ Bouton "Voir plus" affiché uniquement en mobile */}
-        {isMobile && !showAllProjects && (
-          <button
-            className="btn-show-more"
-            onClick={() => setShowAllProjects(true)}
-          >
-            Voir plus ↓
-          </button>
-        )}
-
-        {/* ✅ Bouton "Voir moins" qui apparaît après avoir affiché tous les projets */}
-        {isMobile && showAllProjects && (
-          <button
-            className="btn-show-less"
-            onClick={() => setShowAllProjects(false)}
-          >
-            Voir moins
-          </button>
+        {/* ✅ Boutons affichés immédiatement sans délai */}
+        {isMobile && (
+          <div className="buttons-container">
+            {!showAllProjects ? (
+              <button
+                className="btn-show-more"
+                onClick={() => setShowAllProjects(true)}
+              >
+                Voir plus ↓
+              </button>
+            ) : (
+              <button
+                className="btn-show-less"
+                onClick={() => setShowAllProjects(false)}
+              >
+                Voir moins ↑
+              </button>
+            )}
+          </div>
         )}
       </div>
 
