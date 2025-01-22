@@ -19,37 +19,22 @@ import Contact from "./Contact/Contact.tsx";
 
 function Acceil() {
   const [activePage, setActivePage] = useState<string>("About"); // Page active
-  const [visiblePage, setVisiblePage] = useState<string | null>(null); // Page visible après délai
   const [isExpanded, setIsExpanded] = useState<boolean>(false); // Gestion du toggle mobile
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768); // Détection mobile
-  const [isReady, setIsReady] = useState<boolean>(false); // ✅ Ajout d'un état pour gérer le rendu proprement
 
-  // ✅ Met à jour `isMobile` et force un re-render après le premier chargement
+  // ✅ Mise à jour `isMobile` immédiatement sans délai
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
     window.addEventListener("resize", handleResize);
-
-    // ✅ Marque le composant comme prêt après le premier rendu
-    setTimeout(() => setIsReady(true), 100);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Met à jour la page visible avec un délai
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setVisiblePage(activePage);
-    }, 0);
-
-    return () => clearTimeout(timer);
-  }, [activePage]);
-
-  // Fonction pour afficher la page correspondante
+  // Fonction pour afficher la page correspondante immédiatement
   const renderPage = () => {
-    switch (visiblePage) {
+    switch (activePage) {
       case "About":
         return <About />;
       case "Cv":
@@ -68,8 +53,7 @@ function Acceil() {
   return (
     <div className="container">
       <div className={`card-left ${isExpanded ? "expanded" : ""}`}>
-        {/* ✅ Afficher uniquement quand le composant est prêt */}
-        {isReady && isMobile && (
+        {isMobile && (
           <button
             className="btn-expand"
             onClick={() => setIsExpanded(!isExpanded)}
@@ -88,8 +72,7 @@ function Acceil() {
           <p>Développeur Web Full Stack</p>
           <div className="left-line"></div>
 
-          {/* ✅ Cacher seulement en format mobile, et afficher uniquement si `isReady` */}
-          {isReady && (!isMobile || isExpanded) && (
+          {(!isMobile || isExpanded) && (
             <>
               <div className="social-icons">
                 {[
@@ -156,15 +139,7 @@ function Acceil() {
 
       <div className="card-right">
         <Navbar setActivePage={setActivePage} />
-        <div className="content">
-          {visiblePage ? (
-            renderPage()
-          ) : (
-            <p className="progress-9">
-              <img src={gif1} alt="Chargement..." />
-            </p>
-          )}
-        </div>
+        <div className="content">{renderPage()}</div>
       </div>
     </div>
   );

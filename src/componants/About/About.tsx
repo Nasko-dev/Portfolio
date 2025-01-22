@@ -133,7 +133,7 @@ function About() {
             className="btn-show-less"
             onClick={() => setShowAllProjects(false)}
           >
-            Voir moins ↑
+            Voir moins
           </button>
         )}
       </div>
