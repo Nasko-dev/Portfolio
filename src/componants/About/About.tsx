@@ -134,7 +134,7 @@ function About() {
   return (
     <div className="header">
       <h1>Salut je suis William</h1>
-      <div className="line"></div>
+      <div className="line">{/* Ajout du line Pour séparé le profil */}</div>
       <p className="Skills">
         Développeur web full stack / Game Développeur / Designer UI UX
       </p>
@@ -145,8 +145,8 @@ function About() {
         <div className="card">
           {categories
             .slice(0, showAllProjects || !isMobile ? categories.length : 3)
-            .map((item, index) => (
-              <div key={index} className="card-item">
+            .map((item) => (
+              <div key={item.name} className="card-item">
                 <img src={item.icon} alt={item.name} />
                 <div className="texte">
                   <h3>{item.name}</h3>
@@ -161,6 +161,7 @@ function About() {
           <div className="buttons-container">
             {!showAllProjects ? (
               <button
+                type="button"
                 className="btn-show-more"
                 onClick={() => setShowAllProjects(true)}
               >
@@ -168,6 +169,7 @@ function About() {
               </button>
             ) : (
               <button
+                type="button"
                 className="btn-show-less"
                 onClick={() => setShowAllProjects(false)}
               >
@@ -183,8 +185,8 @@ function About() {
         <div className="avis">
           <h2>Mes Avis</h2>
           <div className="avis-card">
-            {avis.map((item, index) => (
-              <div key={index} className="card-item-avis">
+            {avis.map((item) => (
+              <div key={item.name} className="card-item-avis">
                 <img src={item.image} alt={item.name} />
                 <div className="avis-texte">
                   <h3>{item.name}</h3>
@@ -199,8 +201,8 @@ function About() {
       {/* 📌 Section des startups */}
       <div className="startup">
         <h2>Startup</h2>
-        {startup.map((item, index) => (
-          <span key={index}>
+        {startup.map((item) => (
+          <span key={item.name}>
             <img className="img-startup" src={item.image} alt="startup" />
           </span>
         ))}

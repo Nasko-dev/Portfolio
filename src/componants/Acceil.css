@@ -111,6 +111,25 @@ body {
           overflow: hidden;
           border-radius: 10px;
           background-color: #051a27;
+          transition: transform 0.3s ease-in-out; /* Ajout de la transition ici */
+
+          &.social-icons {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgb(0, 0, 0);
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            transform: translateX(-8px); /* Correction de l'effet */
+          }
 
           img {
             max-width: 100%;
@@ -152,11 +171,22 @@ body {
         display: flex;
         margin-top: 10px;
         gap: 15px;
+        vertical-align: middle;
+        perspective: 1px;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+        transition: transform 0.3s ease-out;
 
         img {
           width: 30px;
           height: auto;
           border-radius: 0px;
+          transition: transform 0.3s ease-out, width 0.3s ease-out;
+
+          &:hover,
+          &:focus,
+          &:active {
+            transform: translateX(-7px) scale(1.1);
+          }
         }
       }
     }
