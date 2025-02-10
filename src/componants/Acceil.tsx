@@ -1,6 +1,6 @@
 import "./Acceil.css";
 import { useState, useEffect } from "react";
-import imgProfil from "../assets/images/IMG_1647.png";
+import imgProfil from "../assets/images/IMG_1647.jpg";
 import svg1 from "../assets/images/svg/envelope.svg";
 import svg2 from "../assets/images/svg/phone.svg";
 import svg3 from "../assets/images/svg/calendar-week.svg";
@@ -17,6 +17,7 @@ import Blog from "./Blog/Blog.tsx";
 import Contact from "./Contact/Contact.tsx";
 
 function Acceil() {
+
   const [activePage, setActivePage] = useState<string>("About"); // Page active
   const [isExpanded, setIsExpanded] = useState<boolean>(false); // Gestion du toggle mobile
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth <= 768); // Détection mobile

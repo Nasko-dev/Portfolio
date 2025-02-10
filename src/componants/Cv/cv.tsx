@@ -17,12 +17,15 @@ function Cv() {
           <p>
             J’ai recréé l’interface de{" "}
             <a href="https://nasko-dev.github.io/Portfolio/">Windows 11</a> en
-            solo pour perfectionner mes compétences en développement web et
-            design UI/UX. En utilisant React, CSS avancé et JavaScript, j’ai
-            reproduit le menu Démarrer, la barre des tâches et les fenêtres
-            dynamiques avec des animations fluides. Ce projet m’a appris à
-            optimiser les performances et à concevoir des interfaces intuitives
-            et esthétiques. Un vrai défi, mais super enrichissant ! 🚀
+            solo pour perfectionner mes...{" "}
+            <strong>
+              compétences en développement web et design UI/UX En utilisant
+              React, CSS avancé et JavaScript, j’ai reproduit le menu Démarrer,
+              la barre des tâches et les fenêtres dynamiques avec des animations
+              fluides. Ce projet m’a appris à optimiser les performances et à
+              concevoir des interfaces intuitives et esthétiques. Un vrai défi,
+              mais super enrichissant ! 🚀
+            </strong>
           </p>
         </div>
         <div className="ronds">

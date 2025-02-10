@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import "./About.css";
 import svg1 from "../../assets/images/svg/icon-design.svg";
 import svg2 from "../../assets/images/svg/icon-dev.svg";
@@ -9,9 +11,27 @@ import img2 from "../../assets/images/avatar-2.png";
 import img3 from "../../assets/images/avatar-3.png";
 import img4 from "../../assets/images/avatar-4.png";
 
+import startup1 from "../../assets/FlachSide.png";
+import startup2 from "../../assets/Exelity.png";
+import startup3 from "../../assets/Vrunk.png";
+import startup4 from "../../assets/ArtCity.png";
+
 function About() {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+
+    tl.set(".img-startup", {
+      x: -1250,
+    }).to(".img-startup", {
+      duration: 10,
+      ease: "none",
+      x: -25,
+      repeat: -1,
+    });
+  }, []);
 
   // ✅ Mise à jour immédiate de `isMobile` en cas de redimensionnement
   useEffect(() => {
@@ -84,12 +104,31 @@ function About() {
   ];
 
   const startup = [
-    { name: "Soon ..." },
-    { name: "Soon ..." },
-    { name: "Soon ..." },
-    { name: "Soon ..." },
-    { name: "Soon ..." },
-    { name: "Soon ..." },
+    {
+      id: 1,
+      image: startup1,
+      name: "ArtCity",
+    },
+    {
+      id: 2,
+      image: startup2,
+      name: "ArtCity",
+    },
+    {
+      id: 2,
+      image: startup3,
+      name: "ArtCity",
+    },
+    {
+      id: 2,
+      image: startup4,
+      name: "ArtCity",
+    },
+    {
+      id: 2,
+      image: startup1,
+      name: "ArtCity",
+    },
   ];
 
   return (
@@ -160,11 +199,11 @@ function About() {
       {/* 📌 Section des startups */}
       <div className="startup">
         <h2>Startup</h2>
-        <p>
-          {startup.map((item, index) => (
-            <span key={index}>{item.name} </span>
-          ))}
-        </p>
+        {startup.map((item, index) => (
+          <span key={index}>
+            <img className="img-startup" src={item.image} alt="startup" />
+          </span>
+        ))}
       </div>
     </div>
   );

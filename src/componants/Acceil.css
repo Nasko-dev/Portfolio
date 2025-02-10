@@ -5,12 +5,15 @@
   text-decoration: none;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--backgroud-color);
+  background-image: url("../assets/topography.svg");
   font-family: Poppins, sans-serif;
   color: var(--text-color);
+  scroll-behavior: smooth;
 
   a {
     color: var(--text-color);
@@ -19,7 +22,7 @@ body {
 
 :root {
   --backgroud-color: rgb(13, 19, 26);
-  --backgroud-segondary-color: #0c0c0c2d;
+  --backgroud-segondary-color: rgba(13, 19, 26, 0.863);
   --backgrund-card: #0522309d;
   --backgrund-nav: #1f1f1f98;
   --segondary-color: rgb(195, 142, 180);
@@ -37,7 +40,7 @@ body {
 
   .card-right {
     width: 900px;
-    height: 2000px;
+    height: auto;
     background-color: var(--backgroud-segondary-color);
     border: solid 1px var(--border-color);
     border-radius: 25px;
@@ -52,7 +55,7 @@ body {
     position: sticky;
     top: 12px;
     width: 300px;
-    height: 800px;
+    height: 750px;
     background-color: var(--backgroud-segondary-color);
     border: solid 1px var(--border-color);
     border-radius: 25px;
@@ -86,6 +89,10 @@ body {
         border-radius: 20px;
       }
 
+      .profile-img {
+        box-shadow: #8a898952 0px 0px 20px 2px;
+      }
+
       .left-line {
         width: 10rem;
         height: 1px;
@@ -109,18 +116,15 @@ body {
             max-width: 100%;
             max-height: 100%;
             width: 50%;
-            height: auto;
             object-fit: contain;
             display: block;
           }
+        }
 
-          .social-icons,
-          .icon-social {
-            opacity: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: opacity 0.3s ease, max-height 0.3s ease;
-          }
+        .info-block {
+          display: flex;
+          margin-bottom: 20px;
+          gap: 20px;
         }
 
         .mail,
@@ -242,4 +246,18 @@ body {
       }
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color);
+  width: 10px;
 }

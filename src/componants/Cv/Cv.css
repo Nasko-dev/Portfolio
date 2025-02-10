@@ -82,6 +82,8 @@
       margin-top: 5rem;
       box-shadow: #b450ac49 0px 0px 5px 5px;
 
+      /* box-shadow: #ffffff6c 0px 0px 25px 5px; */
+
       h4 {
         width: 300px;
         margin-bottom: 10px;
@@ -95,7 +97,7 @@
 
       p {
         margin-left: 100px;
-        min-width: 44rem;
+        width: 44rem;
 
         a {
           color: #6b97b3;
@@ -110,6 +112,24 @@
 
     h2 {
       margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    .ronds {
+      h4 {
+        margin: 0;
+      }
+      p {
+        max-width: 200px; /* Assure que la largeur est bien respectée */
+        margin-left: 100px;
+
+        strong {
+          display: none;
+        }
+      }
     }
   }
 }
