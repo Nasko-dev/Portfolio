@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+
 import "./About.css";
 import svg1 from "../../assets/images/svg/icon-design.svg";
 import svg2 from "../../assets/images/svg/icon-dev.svg";
@@ -46,33 +47,39 @@ function About() {
   const categories = [
     {
       icon: svg1,
-      name: "Code Mastery",
-      description: "🎯 Développement web et perfectionnement technique",
+      name: "Dev Mastery",
+      description:
+        "🎯 Perfectionnement en développement web – Front-end, back-end et algorithmie.",
     },
     {
       icon: svg2,
-      name: "Growth Lab",
-      description: "📈 Stratégies pour booster sa productivité et son mindset",
+      name: "Web Growth Lab",
+      description:
+        "📈 Optimisation web – SEO, UX/UI et automatisation pour des sites performants.",
     },
     {
       icon: svg3,
-      name: "Tech Explorer",
-      description: "🔬 Innovations, IA et tendances technologiques",
+      name: "Tech Vision",
+      description:
+        "🔬 Veille technologique – IA, Web3 et nouvelles tendances du développement.",
     },
     {
       icon: svg4,
-      name: "FitLife",
-      description: "💪 Santé, bien-être et optimisation physique",
+      name: "Code & Performance",
+      description:
+        "💪 Code propre et efficace – Clean code, bonnes pratiques et productivité.",
     },
     {
       icon: svg4,
-      name: "Startup Pulse",
-      description: "🎙️ Interviews et insights sur le monde des startups",
+      name: "Startup Dev Pulse",
+      description:
+        "🎙️ Solutions tech pour startups – Digitalisation, outils et innovations.",
     },
     {
       icon: svg4,
       name: "NeuroVibes",
-      description: "🧠 Neurosciences, intelligence émotionnelle et mindset",
+      description:
+        "🧠 Logique et mindset du dev – Concentration, résolution de problèmes et rigueur.",
     },
   ];
 
@@ -190,7 +197,7 @@ function About() {
                 <img src={item.image} alt={item.name} />
                 <div className="avis-texte">
                   <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  <p>"{item.description}"</p>
                 </div>
               </div>
             ))}

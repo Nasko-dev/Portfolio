@@ -15,6 +15,15 @@
   .Skills {
     margin: 20px 30px;
     font-size: 0.8rem;
+
+    /* Propriétés indispensables pour l'effet typewriter */
+    width: 24em; /* largeur fixe */
+    white-space: nowrap; /* le texte reste sur une seule ligne */
+    overflow: hidden; /* masque le texte en dehors de la zone */
+    border-right: 2px solid rgba(255, 255, 255, 0.75); /* curseur clignotant */
+
+    animation: typewriter 5s steps(50) 1s 1 normal both,
+      blinkingCursor 500ms steps(50) infinite normal;
   }
 
   .btn-show-more,
@@ -46,7 +55,15 @@
       width: 25rem;
       height: 10rem;
       border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
+      cursor: crosshair;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: #8a898952 0px 0px 20px 2px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
       img {
         width: 45px;
@@ -70,7 +87,7 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: var(--segondary-color) #af191900;
 }
 
@@ -89,6 +106,14 @@
     height: 10rem;
     border-radius: 10px;
     display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: crosshair;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: #8a898952 0px 0px 20px 2px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
     img {
       position: relative;
@@ -239,5 +264,23 @@
 @media (min-width: 769px) {
   .btn-show-more {
     display: none;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 46%;
+  }
+}
+
+@keyframes blinkingCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
   }
 }
